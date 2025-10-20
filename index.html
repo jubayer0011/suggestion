@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pre-test Suggestions - College</title>
+  <style>
+    :root{--bg:#f5f7fa;--card:#fff;--accent:#2b7de9;--muted:#555}
+    body{margin:0;font-family:"Noto Sans Bengali",sans-serif;background:var(--bg);color:#111}
+    header{background:var(--accent);color:#fff;text-align:center;padding:14px 10px;font-size:18px;font-weight:600}
+    .notice{background:#fff4d2;color:#8a6d00;padding:10px;text-align:center;font-weight:500;position:relative}
+    .close-btn{position:absolute;right:10px;top:6px;background:none;border:none;font-size:18px;cursor:pointer;color:#8a6d00}
+    main{max-width:900px;margin:20px auto;padding:10px}
+    .subjects{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+    .card{background:var(--card);border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);padding:14px;transition:transform .1s}
+    .card:hover{transform:scale(1.02)}
+    .card h3{margin:0 0 8px 0;font-size:16px;color:var(--accent)}
+    .card p{margin:0;font-size:14px;color:var(--muted);white-space:pre-line}
+    .extra{margin-top:8px;font-size:13px;color:#333;background:#eef5ff;padding:6px;border-radius:6px}
+    .contributors{margin-top:40px;text-align:center;padding:20px;background:#fff;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+    .contributors h2{margin:0 0 10px 0;color:var(--accent)}
+    .contrib-name{font-size:16px;font-weight:600;color:#222;opacity:0;transition:opacity 1s}
+    footer{text-align:center;font-size:13px;color:var(--muted);padding:16px 0}
+    footer a{color:var(--accent);text-decoration:none;font-weight:500}
+  </style>
+</head>
+<body>
+  <header>কলেজ প্রি-টেস্ট সাজেশন</header>
+  <div class="notice" id="notice">
+    সাজেশন আপডেট হলে ওয়েবসাইট এ চল আসবে
+    <button class="close-btn" onclick="closeNotice()">×</button>
+  </div>
+
+  <main>
+    <div class="subjects">
+      <div class="card">
+        <h3>Physics 1st Paper</h3>
+        <p>• অধ্যায় ১: ভেক্টর
+• অধ্যায় ২: গতি
+• অধ্যায় ৩: বল ও নিউটনের সূত্র</p>
+        <div class="extra">সব অধ্যায় থেকেই গুরুত্বপূর্ণ প্রশ্ন থাকতে পারে।</div>
+      </div>
+      <div class="card">
+        <h3>Physics 2nd Paper</h3>
+        <p>• অধ্যায় ৫: বিদ্যুৎ
+• অধ্যায় ৬: চৌম্বকত্ব
+• অধ্যায় ৭: বর্তন</p>
+        <div class="extra">বিদ্যুৎ ও চৌম্বকত্ব অধ্যায় বেশি গুরুত্ব পাবে।</div>
+      </div>
+      <div class="card">
+        <h3>Chemistry 1st Paper</h3>
+        <p>• গ্যাসের গতি তত্ত্ব
+• রাসায়নিক বন্ধন
+• রিডক্স বিক্রিয়া</p>
+        <div class="extra">কেমিস্ট্রি সব গুলো অধ্যায় থেকে প্রশ্ন করা হবে।</div>
+      </div>
+      <div class="card">
+        <h3>Chemistry 2nd Paper</h3>
+        <p>• অণুর গঠন
+• অজৈব যৌগ
+• ধাতু ও অম্ল</p>
+        <div class="extra">সমস্ত অধ্যায় সমান গুরুত্বপূর্ণ।</div>
+      </div>
+      <div class="card">
+        <h3>Math 1st Paper</h3>
+        <p>• ভেক্টর ও ম্যাট্রিক্স
+• সমীকরণ সমাধান
+• ধারা</p>
+        <div class="extra">ম্যাট্রিক্স অধ্যায় থেকে বেশি প্রশ্ন আসতে পারে।</div>
+      </div>
+      <div class="card">
+        <h3>Math 2nd Paper</h3>
+        <p>• অন্তরকরণ
+• সমাকলন
+• ত্রিকোণমিতি প্রয়োগ</p>
+        <div class="extra">অন্তরকরণ অংশ বেশি গুরুত্ব পাবে।</div>
+      </div>
+      <div class="card">
+        <h3>Bangla 1st Paper</h3>
+        <p>• সাহিত্য পাঠ
+• কবিতা বিশ্লেষণ
+• গদ্য পাঠ</p>
+        <div class="extra">কবিতা অংশে বেশি মনোযোগ দিন।</div>
+      </div>
+      <div class="card">
+        <h3>Bangla 2nd Paper</h3>
+        <p>• ব্যাকরণ
+• প্রবন্ধ
+• চিঠি ও আবেদনপত্র</p>
+        <div class="extra">ব্যাকরণ অংশে বিশেষ গুরুত্ব দিন।</div>
+      </div>
+      <div class="card">
+        <h3>Biology 1st Paper</h3>
+        <p>• কোষতত্ত্ব
+• অনুজীব
+• মানব শরীরতত্ত্ব</p>
+        <div class="extra">প্রতিটি অধ্যায় সমান গুরুত্বপূর্ণ।</div>
+      </div>
+      <div class="card">
+        <h3>Biology 2nd Paper</h3>
+        <p>• উদ্ভিদ শারীরবিদ্যা
+• জেনেটিক্স
+• পরিবেশবিদ্যা</p>
+        <div class="extra">জেনেটিক্স অধ্যায়ে বিশেষ নজর দিন।</div>
+      </div>
+      <div class="card">
+        <h3>ICT</h3>
+        <p>• প্রোগ্রামিং ধারণা
+• ডাটাবেস
+• নেটওয়ার্কিং</p>
+        <div class="extra">প্রোগ্রামিং ও ডাটাবেস থেকে প্রশ্ন আসবে।</div>
+      </div>
+      <div class="card">
+        <h3>English 1st Paper</h3>
+        <p>• Reading Comprehension
+• Grammar
+• Vocabulary</p>
+        <div class="extra">Grammar ও Vocabulary অংশে ফোকাস করুন।</div>
+      </div>
+      <div class="card">
+        <h3>English 2nd Paper</h3>
+        <p>• Writing Composition
+• Application
+• Paragraph</p>
+        <div class="extra">Application লেখার অনুশীলন করুন।</div>
+      </div>
+    </div>
+
+    <div class="contributors">
+      <h2>Contributors</h2>
+      <div id="contrib-name" class="contrib-name">—</div>
+    </div>
+  </main>
+
+  <footer>
+    The website is created by Jubayer Talukdar. <a href="https://jubayer0011.github.io/aboutme" target="_blank">Click here to know more.</a>
+  </footer>
+
+  <script>
+    function closeNotice(){
+      const n = document.getElementById('notice');
+      n.style.display='none';
+    }
+
+    const contributors = ['Rafi Ahmed','Nusrat Jahan','Shihab Hasan','Tanzila Akter','Arif Rahman'];
+    let idx = 0;
+    const nameEl = document.getElementById('contrib-name');
+
+    function showNext(){
+      nameEl.style.opacity = 0;
+      setTimeout(()=>{
+        nameEl.textContent = contributors[idx];
+        nameEl.style.opacity = 1;
+        idx = (idx + 1) % contributors.length;
+      },1000);
+    }
+
+    setInterval(showNext, 3000);
+    showNext();
+  </script>
+</body>
+</html>
