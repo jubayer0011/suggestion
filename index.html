@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Animation</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h1 {
+    color: white;
+    font-size: 3rem;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    position: absolute;
+    text-align: center;
+  }
+
+  .fade-in {
+    opacity: 1;
+  }
+
+  .fade-out {
+    opacity: 0;
+  }
+</style>
+</head>
+<body>
+  <h1 id="welcome">Welcome</h1>
+  <h1 id="preparing"></h1>
+
+  <script>
+    const welcome = document.getElementById('welcome');
+    const preparing = document.getElementById('preparing');
+
+    // Random message list
+    const messages = [
+      "Believe in yourself and magic will happen.",
+      "Think different",
+      "Good luck!",
+      "You can do it",
+      "Dream big.",
+      "Success is near.",
+      "Make it happen",
+      "Every step counts",
+      "Stay focused",
+      "Be fearless",
+      "Rise and shine",
+      "Keep striving",
+      "Never settle",
+      "Trust yourself",
+      "Make it happen"
+    ];
+
+    // Randomly select one
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    preparing.textContent = randomMessage;
+
+    window.addEventListener('load', () => {
+      // 0.5s পরে "Welcome" fade-in
+      setTimeout(() => {
+        welcome.classList.add('fade-in');
+
+        // "Welcome" 1.5s দেখার পরে fade-out
+        setTimeout(() => {
+          welcome.classList.remove('fade-in');
+          welcome.classList.add('fade-out');
+
+          // fade-out শেষে random লেখা fade-in
+          setTimeout(() => {
+            preparing.classList.add('fade-in');
+
+            // 1.5s পরে fade-out
+            setTimeout(() => {
+              preparing.classList.remove('fade-in');
+              preparing.classList.add('fade-out');
+
+              // 1s পরে redirect
+              setTimeout(() => {
+                window.location.href = 'suggestion.html'; // নতুন URL
+              }, 1000);
+
+            }, 1500); // random লেখা দেখার সময়
+
+          }, 1500); // welcome fade-out শেষে delay
+
+        }, 1500); // welcome দেখার সময়
+
+      }, 500); // load এর 1s পরে fade-in
+    });
+  </script>
+</body>
+</html>
