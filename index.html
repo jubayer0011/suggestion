@@ -1,120 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <link rel="preload" href="suggestion.html" as="document">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thanks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #f6d365;
+      --bg2: #fda085;
+      --card: rgba(255,255,255,0.85);
+      --muted: #6b7280;
+      --accent: #111827;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2));}
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:24px}
+    .card{width:min(720px,92vw);background:var(--card);backdrop-filter:blur(6px);border-radius:20px;padding:36px 42px;box-shadow:0 10px 30px rgba(15,23,42,0.12);text-align:center;transform:translateY(10px);opacity:0;animation:intro .7s ease-out forwards}
+    @keyframes intro{to{transform:none;opacity:1}}
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welcome</title>
-<style>
-  body {
-    margin: 0;
-    height: 100vh;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+    .logo-dot{width:72px;height:72px;border-radius:18px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ffffff50,rgba(255,255,255,0.15));box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+    .logo-dot span{font-weight:800;color:var(--accent);font-size:28px}
 
-  h1 {
-    color: white;
-    font-size: 3rem;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-    position: absolute;
-    text-align: center;
-  }
+    h1{font-size:28px;margin:6px 0 10px;color:var(--accent);letter-spacing:0.2px}
+    p.lead{margin:0 0 20px;color:var(--muted);font-size:14px}
 
-  .fade-in {
-    opacity: 1;
-  }
+    .stats{display:flex;gap:20px;justify-content:center;margin-bottom:14px}
+    .stat{min-width:120px;background:rgba(255,255,255,0.6);padding:12px;border-radius:12px}
+    .stat .num{font-weight:700;font-size:20px;color:var(--accent)}
+    .stat .label{font-size:12px;color:var(--muted);margin-top:6px}
 
-  .fade-out {
-    opacity: 0;
-  }
+    .small-note{font-size:13px;color:var(--muted);margin-top:8px}
+
+    /* subtle pulse */
+    .card:after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;border-radius:20px;pointer-events:none}
+
+    @media (max-width:420px){.card{padding:22px;border-radius:14px} .logo-dot{width:56px;height:56px}.stat{min-width:100px}}
+  .go-btn{margin-top:18px;padding:12px 22px;font-size:15px;font-weight:600;border:none;border-radius:14px;background:#111827;color:#fff;cursor:pointer;transition:transform .25s,opacity .25s}
+.go-btn:hover{transform:translateY(-2px);opacity:.9}
+.go-btn:active{transform:scale(.97)}
+
+.card{animation:intro .8s ease-out forwards, floaty 4s ease-in-out infinite 1s}
+@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
 </style>
+  
 </head>
 <body>
-  <h1 id="welcome">silence is golden</h1>
-  <h1 id="preparing"></h1>
+  <div class="wrap">
+    <div class="card" role="status" aria-live="polite">
+      <div class="logo-dot" aria-hidden="true"><span>✓</span></div>
+      <h1>Thanks for your support</h1>
+      <p class="lead">Your encouragement keeps us going.</p>
 
-  <script>
-    window.location.href="suggestion.html";
+      <div class="stats" aria-hidden="true">
+        <div class="stat">
+          <div class="num">Total visitors: 1K</div>
+          <div class="label">Visitors</div>
+        </div>
+        <div class="stat">
+          <div class="num">Active users: 90</div>
+          <div class="label">Currently active</div>
+        </div>
+      </div>
 
-    /*
-
-    const welcome = document.getElementById('welcome');
-    const preparing = document.getElementById('preparing');
-
-    // Random message list
-    const messages = [
-      "Believe in yourself and magic will happen",
-      "Think different",
-      "Good luck!",
-      "You can do it",
-      "Dream big !",
-      "Success is near",
-      "Make it happen",
-      "Stay focused",
-      "Be fearless",
-      "Rise and shine",
-      "Keep striving",
-      "Never settle",
-      "Trust yourself",
-      "Make it happen",
-      "Getting everything ready for you",
-      "Suggestion is loading ... ",
-      
-      
-    ];
-
-    // Randomly select one
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    preparing.textContent = randomMessage;
-
-    window.addEventListener('load', () => {
-      // 0.5s পরে "Welcome" fade-in
-      setTimeout(() => {
-        welcome.classList.add('fade-in');
-
-        // "Welcome" 1.5s দেখার পরে fade-out
-        setTimeout(() => {
-          welcome.classList.remove('fade-in');
-          welcome.classList.add('fade-out');
-
-          // fade-out শেষে random লেখা fade-in
-          setTimeout(() => {
-            preparing.classList.add('fade-in');
-
-            // 1.5s পরে fade-out
-            setTimeout(() => {
-              preparing.classList.remove('fade-in');
-              preparing.classList.add('fade-out');
-
-              // 1s পরে redirect
-              setTimeout(() => {
-                window.location.href = 'suggestion.html'; // নতুন URL
-              }, 1000);
-
-            }, 1500); // random লেখা দেখার সময়
-
-          }, 1500); // welcome fade-out শেষে delay
-
-        }, 1500); // welcome দেখার সময়
-
-      }, 500); // load এর 1s পরে fade-in
-    });
-
-    */
-  </script>
+      <div class="small-note">Stay connected for more study meterials</div>
+      <button class="go-btn" onclick="window.location.href='suggestion.html'">Go to suggestion page</button>
+    </div>
+  </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
